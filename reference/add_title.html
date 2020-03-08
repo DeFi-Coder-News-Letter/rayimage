@@ -69,7 +69,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">rayimage</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.3</span>
       </span>
     </div>
 
@@ -206,25 +206,25 @@ to returning it.</p></td>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'>#Plot the dragon</span>
-<span class='fu'>add_title</span>(<span class='no'>dragon</span>, <span class='kw'>preview</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>title_text</span> <span class='kw'>=</span> <span class='st'>"Dragon"</span>, <span class='kw'>title_size</span><span class='kw'>=</span><span class='fl'>20</span>)</div><div class='img'><img src='add_title-1.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='fu'>add_title</span>(<span class='no'>dragon</span>, <span class='kw'>preview</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>title_text</span> <span class='kw'>=</span> <span class='st'>"Dragon"</span>, <span class='kw'>title_size</span><span class='kw'>=</span><span class='fl'>20</span>)</div><div class='img'><img src='add_title-1.png' alt='' width='700' height='700' /></div><div class='input'>
 <span class='co'>#That's hard to see--let's add a title bar:</span>
 <span class='co'># \donttest{</span>
 <span class='fu'>add_title</span>(<span class='no'>dragon</span>, <span class='kw'>preview</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>title_text</span> <span class='kw'>=</span> <span class='st'>"Dragon"</span>, <span class='kw'>title_size</span><span class='kw'>=</span><span class='fl'>20</span>,
-         <span class='kw'>title_bar_color</span><span class='kw'>=</span><span class='st'>"white"</span>)</div><div class='img'><img src='add_title-2.png' alt='' width='700' height='433' /></div><div class='input'><span class='co'># }</span>
+         <span class='kw'>title_bar_color</span><span class='kw'>=</span><span class='st'>"white"</span>)</div><div class='img'><img src='add_title-2.png' alt='' width='700' height='700' /></div><div class='input'><span class='co'># }</span>
 
 <span class='co'>#Change the width of the bar:</span>
 <span class='co'># \donttest{</span>
 <span class='fu'>add_title</span>(<span class='no'>dragon</span>, <span class='kw'>preview</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>title_text</span> <span class='kw'>=</span> <span class='st'>"Dragon"</span>, <span class='kw'>title_size</span><span class='kw'>=</span><span class='fl'>20</span>,
-         <span class='kw'>title_bar_color</span><span class='kw'>=</span><span class='st'>"white"</span>, <span class='kw'>title_offset</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>12</span>,<span class='fl'>12</span>))</div><div class='img'><img src='add_title-3.png' alt='' width='700' height='433' /></div><div class='input'><span class='co'># }</span>
+         <span class='kw'>title_bar_color</span><span class='kw'>=</span><span class='st'>"white"</span>, <span class='kw'>title_offset</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>12</span>,<span class='fl'>12</span>))</div><div class='img'><img src='add_title-3.png' alt='' width='700' height='700' /></div><div class='input'><span class='co'># }</span>
 <span class='co'>#Change the color and title color:</span>
 <span class='co'># \donttest{</span>
 <span class='fu'>add_title</span>(<span class='no'>dragon</span>, <span class='kw'>preview</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>title_text</span> <span class='kw'>=</span> <span class='st'>"Dragon"</span>, <span class='kw'>title_size</span><span class='kw'>=</span><span class='fl'>20</span>,
-         <span class='kw'>title_bar_color</span><span class='kw'>=</span><span class='st'>"red"</span>, <span class='kw'>title_color</span> <span class='kw'>=</span> <span class='st'>"white"</span>, <span class='kw'>title_offset</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>12</span>,<span class='fl'>12</span>))</div><div class='img'><img src='add_title-4.png' alt='' width='700' height='433' /></div><div class='input'><span class='co'># }</span>
+         <span class='kw'>title_bar_color</span><span class='kw'>=</span><span class='st'>"red"</span>, <span class='kw'>title_color</span> <span class='kw'>=</span> <span class='st'>"white"</span>, <span class='kw'>title_offset</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>12</span>,<span class='fl'>12</span>))</div><div class='img'><img src='add_title-4.png' alt='' width='700' height='700' /></div><div class='input'><span class='co'># }</span>
 
 <span class='co'>#Change the transparency:</span>
 <span class='co'># \donttest{</span>
 <span class='fu'>add_title</span>(<span class='no'>dragon</span>, <span class='kw'>preview</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>title_text</span> <span class='kw'>=</span> <span class='st'>"Dragon"</span>, <span class='kw'>title_size</span><span class='kw'>=</span><span class='fl'>20</span>, <span class='kw'>title_bar_alpha</span> <span class='kw'>=</span> <span class='fl'>0.8</span>,
-         <span class='kw'>title_bar_color</span><span class='kw'>=</span><span class='st'>"red"</span>, <span class='kw'>title_color</span> <span class='kw'>=</span> <span class='st'>"white"</span>, <span class='kw'>title_offset</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>12</span>,<span class='fl'>12</span>))</div><div class='img'><img src='add_title-5.png' alt='' width='700' height='433' /></div><div class='input'># }
+         <span class='kw'>title_bar_color</span><span class='kw'>=</span><span class='st'>"red"</span>, <span class='kw'>title_color</span> <span class='kw'>=</span> <span class='st'>"white"</span>, <span class='kw'>title_offset</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>12</span>,<span class='fl'>12</span>))</div><div class='img'><img src='add_title-5.png' alt='' width='700' height='700' /></div><div class='input'># }
 
 </div></pre>
   </div>
