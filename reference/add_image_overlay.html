@@ -72,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">rayimage</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.6</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.7</span>
       </span>
     </div>
 
@@ -144,6 +144,7 @@
     <pre class="usage"><span class='fu'>add_image_overlay</span>(
   <span class='no'>image</span>,
   <span class='kw'>image_overlay</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>alpha</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
   <span class='kw'>filename</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
   <span class='kw'>preview</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>
 )</pre>
@@ -160,6 +161,11 @@
       <td><p>Default <code>NULL</code>. Either a string indicating the location of a png image to overlay
 over the image (transparency included), or a 4-layer RGBA array. This image will be resized to the
 dimension of the image if it does not match exactly.</p></td>
+    </tr>
+    <tr>
+      <th>alpha</th>
+      <td><p>Default <code>NULL</code>, using overlay's alpha channel. Otherwise, this sets the alpha transparency
+by multiplying the existing alpha channel by this value (between 0 and 1).</p></td>
     </tr>
     <tr>
       <th>filename</th>
@@ -185,13 +191,15 @@ to returning it.</p></td>
 <span class='no'>circlemat</span> <span class='kw'>=</span> <span class='no'>circlemat</span>/<span class='fu'><a href='https://rdrr.io/r/base/Extremes.html'>max</a></span>(<span class='no'>circlemat</span>)
 
 <span class='co'>#Create RGBA image, with a transparency of 0.5</span>
-<span class='no'>rgba_array</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/array.html'>array</a></span>(<span class='fl'>0</span>, <span class='kw'>dim</span><span class='kw'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/nrow.html'>nrow</a></span>(<span class='no'>circlemat</span>),<span class='fu'><a href='https://rdrr.io/r/base/nrow.html'>ncol</a></span>(<span class='no'>circlemat</span>),<span class='fl'>4</span>))
+<span class='no'>rgba_array</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/array.html'>array</a></span>(<span class='fl'>1</span>, <span class='kw'>dim</span><span class='kw'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/nrow.html'>nrow</a></span>(<span class='no'>circlemat</span>),<span class='fu'><a href='https://rdrr.io/r/base/nrow.html'>ncol</a></span>(<span class='no'>circlemat</span>),<span class='fl'>4</span>))
 <span class='no'>rgba_array</span>[,,<span class='fl'>1</span>] <span class='kw'>=</span> <span class='no'>circlemat</span>
-<span class='no'>rgba_array</span>[,,<span class='fl'>4</span>] <span class='kw'>=</span> <span class='fl'>0.5</span>
+<span class='no'>rgba_array</span>[,,<span class='fl'>2</span>] <span class='kw'>=</span> <span class='fl'>0</span>
+<span class='no'>rgba_array</span>[,,<span class='fl'>3</span>] <span class='kw'>=</span> <span class='fl'>0</span>
 <span class='no'>dragon_clipped</span> <span class='kw'>=</span> <span class='no'>dragon</span>
 <span class='no'>dragon_clipped</span>[<span class='no'>dragon_clipped</span> <span class='kw'>&gt;</span> <span class='fl'>1</span>] <span class='kw'>=</span> <span class='fl'>1</span>
 <span class='co'># \donttest{</span>
-<span class='fu'>add_image_overlay</span>(<span class='no'>dragon_clipped</span>, <span class='kw'>image_overlay</span> <span class='kw'>=</span> <span class='no'>rgba_array</span>, <span class='kw'>preview</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='img'><img src='add_image_overlay-2.png' alt='' width='700' height='700' /></div><div class='input'># }
+<span class='fu'>add_image_overlay</span>(<span class='no'>dragon_clipped</span>, <span class='kw'>image_overlay</span> <span class='kw'>=</span> <span class='no'>rgba_array</span>,
+                 <span class='kw'>alpha</span><span class='kw'>=</span><span class='fl'>0.5</span>, <span class='kw'>preview</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='img'><img src='add_image_overlay-2.png' alt='' width='700' height='700' /></div><div class='input'># }
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
